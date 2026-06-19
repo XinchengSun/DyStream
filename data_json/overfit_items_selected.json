@@ -1,0 +1,18 @@
+[
+  {
+    "video_id": "selected_sample_001",
+    "gt_video_path": "data_overfit_selected/sample_001/gt.mp4",
+    "image_path": "data_overfit_selected/sample_001/ref.png",
+    "audio_path": "data_overfit_selected/sample_001/audio.wav",
+    "motion_path": "data_overfit_selected/sample_001/motion.npz",
+    "caption": "adult male speaker, close-up frontal talking-head interview video, neutral indoor lighting, natural mouth motion"
+  },
+  {
+    "video_id": "selected_sample_002",
+    "gt_video_path": "data_overfit_selected/sample_002/gt.mp4",
+    "image_path": "data_overfit_selected/sample_002/ref.png",
+    "audio_path": "data_overfit_selected/sample_002/audio.wav",
+    "motion_path": "data_overfit_selected/sample_002/motion.npz",
+    "caption": "adult female speaker, close-up frontal talking-head interview video, neutral indoor lighting, natural mouth motion"
+  }
+]

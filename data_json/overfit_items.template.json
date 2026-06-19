@@ -1,0 +1,18 @@
+[
+  {
+    "video_id": "overfit_sample_001",
+    "gt_video_path": "data_overfit/sample_001/gt.mp4",
+    "image_path": "data_overfit/sample_001/ref.png",
+    "audio_path": "data_overfit/sample_001/audio.wav",
+    "motion_path": "data_overfit/sample_001/motion.npz",
+    "caption": "adult male speaker, frontal cropped talking-head video, indoor interview lighting, neutral expression, English speech"
+  },
+  {
+    "video_id": "overfit_sample_002",
+    "gt_video_path": "data_overfit/sample_002/gt.mp4",
+    "image_path": "data_overfit/sample_002/ref.png",
+    "audio_path": "data_overfit/sample_002/audio.wav",
+    "motion_path": "data_overfit/sample_002/motion.npz",
+    "caption": "adult female speaker, frontal cropped talking-head video, indoor interview lighting, neutral expression, English speech"
+  }
+]
