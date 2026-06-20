@@ -32,6 +32,8 @@ The package intentionally contains our task-related code, configs, scripts, meta
 ```text
 overfit_text_code_package_20260618/
   README.md
+  PACKAGE_MANIFEST.md
+  video_to_latent.py
   docs/
     overfit_text_code_map_20260618.md
     current_task_status_20260529.md
@@ -49,6 +51,7 @@ overfit_text_code_package_20260618/
       overfit_2samples.yaml
       overfit_2samples_text.yaml
   scripts/
+    extract_video_motion_latents.py
     prepare_overfit_metadata.py
     prepare_selected_overfit_samples.sh
     preflight_overfit_train.py
@@ -93,6 +96,7 @@ The code package is scoped to the assessment work:
 2. Official-checkpoint inference for baseline comparison.
 3. Fine-tuned overfit inference.
 4. Text-condition injection where caption is used as prompt during training and inference.
+5. Video-to-motion-latent extraction for rebuilding `motion.npz` from cropped `gt.mp4`.
 
 Large runtime dependencies must still be prepared from the original DyStream project:
 
@@ -100,4 +104,11 @@ Large runtime dependencies must still be prepared from the original DyStream pro
 checkpoints/last.ckpt
 tools/wrapping_encoder_decoder and related checkpoints
 prepared two-sample data under data_overfit/
+```
+
+The motion latent extraction entry points are:
+
+```text
+video_to_latent.py
+scripts/extract_video_motion_latents.py
 ```
