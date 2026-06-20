@@ -19,10 +19,12 @@ Important files:
 ```text
 train.py
 main.py
+video_to_latent.py
 datasets/single_dyadic_prev_audio.py
 model/motion_generation/motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder_text.py
 configs/motion_gen/overfit_2samples_selected.yaml
 configs/motion_gen/overfit_2samples_selected_text.yaml
+scripts/extract_video_motion_latents.py
 scripts/prepare_overfit_metadata.py
 scripts/prepare_selected_overfit_samples.sh
 scripts/run_selected_overfit.sh
@@ -67,6 +69,24 @@ Prepare selected metadata and motion latents:
 ```bash
 TRAIN_STRIDE_FRAMES=1 DEVICE=cuda BATCH_SIZE=64 bash scripts/prepare_selected_overfit_samples.sh
 ```
+
+If you already have a cropped `gt.mp4` and only need to rebuild the DyStream motion latent file, use either entry point below. They are equivalent:
+
+```bash
+python video_to_latent.py \
+  --video data_overfit_selected/sample_001/gt.mp4 \
+  --output data_overfit_selected/sample_001/motion.npz \
+  --device cuda \
+  --batch-size 64
+
+python scripts/extract_video_motion_latents.py \
+  --video data_overfit_selected/sample_001/gt.mp4 \
+  --output data_overfit_selected/sample_001/motion.npz \
+  --device cuda \
+  --batch-size 64
+```
+
+This requires the original DyStream `tools/visualization_0416` assets and their wrapping/motion encoder checkpoints to be present in the checkout.
 
 Pure audio overfit:
 
