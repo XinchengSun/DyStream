@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+*.so
+
+# Runtime outputs
+outputs/
+stream_outputs/
+inference_outputs/
+cache/
+
+# Large model assets are intentionally kept out of git.
+checkpoints/
+tools/hf_models/
+tools/visualization_0416/pretrained_model/
+tools/visualization_0416/utils/face_landmarker.task
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Local environment files
+.env
+.venv/
+venv/

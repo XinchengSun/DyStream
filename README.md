@@ -163,3 +163,28 @@ Each folder contains two MP4 files, one for each selected sample.
 - `resume_mode=weights_only` loads official model weights without restoring the original trainer step or optimizer state.
 - The text-conditioned implementation satisfies the requirement that `caption` is used as prompt during training. It is a first-pass conditioning implementation, not a mature strong-control model.
 - If a checkpoint filename contains `=`, create a clean symlink before passing it through config overrides, for example `checkpoints/package_audio_step1500.ckpt`.
+
+## Realtime Microphone MP4 Runtime
+
+This repository also includes the non-weight files for the lagged realtime microphone-to-MP4 command collected from `/root/autodl-tmp/DyStream_cudagraph_streamtest`.
+
+Run it with:
+
+```bash
+bash scripts/run_mic_realtime_to_mp4_lag1.sh
+```
+
+The helper defaults to the requested command:
+
+```bash
+OMP_NUM_THREADS=1 TRANSFORMERS_OFFLINE=1 HF_HUB_OFFLINE=1 \
+CUDA_VISIBLE_DEVICES=0,1 python -u mic_realtime_to_mp4_lag1.py \
+  --feature_lag_frames 3 \
+  --hop_ms 200 \
+  --denoising_steps 1 \
+  --motion_gpu 0 \
+  --render_gpu 1 \
+  --port 6008
+```
+
+Model weights are intentionally excluded from git. See `docs/mic_realtime_mp4_runtime.md` for the required local asset paths.

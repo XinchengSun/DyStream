@@ -112,3 +112,46 @@ The motion latent extraction entry points are:
 video_to_latent.py
 scripts/extract_video_motion_latents.py
 ```
+
+## Realtime microphone MP4 runtime update
+
+The following non-weight files were added for the lagged realtime microphone-to-MP4 command:
+
+```text
+app.py
+mic_realtime_to_mp4_lag1.py
+dual_gpu_mic_realtime_ui_v8_playbuffer.py
+utils.py
+requirements.txt
+configs/motion_gen/sample.yaml
+img_files/3.png
+img_files/11.png
+model/motion_generation/motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder.py
+model/motion_generation/motion_gen_utils_dev.py
+tools/visualization_0416/configs/
+tools/visualization_0416/utils/
+scripts/run_mic_realtime_to_mp4_lag1.sh
+docs/mic_realtime_mp4_runtime.md
+```
+
+The checked-in run helper captures:
+
+```bash
+OMP_NUM_THREADS=1 TRANSFORMERS_OFFLINE=1 HF_HUB_OFFLINE=1 \
+CUDA_VISIBLE_DEVICES=0,1 python -u mic_realtime_to_mp4_lag1.py \
+  --feature_lag_frames 3 \
+  --hop_ms 200 \
+  --denoising_steps 1 \
+  --motion_gpu 0 \
+  --render_gpu 1 \
+  --port 6008
+```
+
+The following runtime assets remain external and are ignored by git:
+
+```text
+checkpoints/last.ckpt
+tools/hf_models/wav2vec2-base-960h/
+tools/visualization_0416/pretrained_model/epoch=0-step=312000.ckpt
+tools/visualization_0416/utils/face_landmarker.task
+```
