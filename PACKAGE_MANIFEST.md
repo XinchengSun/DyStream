@@ -43,7 +43,7 @@ overfit_text_code_package_20260618/
     single_dyadic_prev_audio.py
   model/
     motion_generation/
-      motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder_text.py
+      text_conditioned_audio2face.py
   configs/
     motion_gen/
       overfit_2samples_selected.yaml
@@ -119,26 +119,26 @@ The following non-weight files were added for the lagged realtime microphone-to-
 
 ```text
 app.py
-mic_realtime_to_mp4_lag1.py
-dual_gpu_mic_realtime_ui_v8_playbuffer.py
+realtime_mic_to_mp4.py
+realtime_mic_pipeline.py
 utils.py
 requirements.txt
 configs/motion_gen/sample.yaml
 img_files/3.png
 img_files/11.png
-model/motion_generation/motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder.py
+model/motion_generation/realtime_audio2face_cuda_graph.py
 model/motion_generation/motion_gen_utils_dev.py
 tools/visualization_0416/configs/
 tools/visualization_0416/utils/
-scripts/run_mic_realtime_to_mp4_lag1.sh
-docs/mic_realtime_mp4_runtime.md
+scripts/run_realtime_mic_to_mp4.sh
+docs/realtime_mic_to_mp4.md
 ```
 
 The checked-in run helper captures:
 
 ```bash
 OMP_NUM_THREADS=1 TRANSFORMERS_OFFLINE=1 HF_HUB_OFFLINE=1 \
-CUDA_VISIBLE_DEVICES=0,1 python -u mic_realtime_to_mp4_lag1.py \
+CUDA_VISIBLE_DEVICES=0,1 python -u realtime_mic_to_mp4.py \
   --feature_lag_frames 3 \
   --hop_ms 200 \
   --denoising_steps 1 \

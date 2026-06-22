@@ -37,7 +37,7 @@ python -u main.py \
   data.train_bs="${TRAIN_BS}" \
   data.val_bs="${VAL_BS}" \
   data.num_workers="${NUM_WORKERS}" \
-  model.module_name=model.motion_generation.motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder \
+  model.module_name=model.motion_generation.realtime_audio2face_cuda_graph \
   resume_ckpt="${CKPT}"
 
 latest_dir="$(ls -td outputs/*_${EXP_NAME} 2>/dev/null | head -n 1 || true)"

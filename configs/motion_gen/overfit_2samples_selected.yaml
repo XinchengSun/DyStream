@@ -37,7 +37,7 @@ data:
   training_mode: speaker_only
 
 model:
-  module_name: model.motion_generation.motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder
+  module_name: model.motion_generation.realtime_audio2face_cuda_graph
   class_name: Audio2FaceGPT
   ema_decay: 0.999
   model_type: ${model.class_name}

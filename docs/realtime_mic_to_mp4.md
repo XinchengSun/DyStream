@@ -7,7 +7,7 @@ cd /root/autodl-tmp/DyStream_cudagraph_streamtest && \
 export OMP_NUM_THREADS=1 && \
 export TRANSFORMERS_OFFLINE=1 && \
 export HF_HUB_OFFLINE=1 && \
-CUDA_VISIBLE_DEVICES=0,1 python -u mic_realtime_to_mp4_lag1.py \
+CUDA_VISIBLE_DEVICES=0,1 python -u realtime_mic_to_mp4.py \
   --feature_lag_frames 3 \
   --hop_ms 200 \
   --denoising_steps 1 \
@@ -19,7 +19,7 @@ CUDA_VISIBLE_DEVICES=0,1 python -u mic_realtime_to_mp4_lag1.py \
 In this repository, the equivalent checked-in helper is:
 
 ```bash
-bash scripts/run_mic_realtime_to_mp4_lag1.sh
+bash scripts/run_realtime_mic_to_mp4.sh
 ```
 
 ## Included Source Scope
@@ -27,12 +27,12 @@ bash scripts/run_mic_realtime_to_mp4_lag1.sh
 The runtime source bundle includes:
 
 ```text
-mic_realtime_to_mp4_lag1.py
-dual_gpu_mic_realtime_ui_v8_playbuffer.py
+realtime_mic_to_mp4.py
+realtime_mic_pipeline.py
 app.py
 utils.py
 configs/motion_gen/sample.yaml
-model/motion_generation/motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder.py
+model/motion_generation/realtime_audio2face_cuda_graph.py
 model/motion_generation/motion_gen_utils_dev.py
 tools/visualization_0416/configs/
 tools/visualization_0416/utils/face_detector.py

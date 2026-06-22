@@ -46,7 +46,7 @@ instantiate_motion_gen = _project_utils.instantiate_motion_gen
 Config = _project_utils.Config
 
 # 2) Add VIS_DIR to sys.path (for utils.face_detector etc.)
-#    Do NOT add VIS_MODEL_DIR directly – it has its own `model/` package that
+#    Do NOT add VIS_MODEL_DIR directly - it has its own `model/` package that
 #    would shadow the project-root `model/` package.  Instead, we merge the two
 #    `model` package namespaces below.
 if VIS_DIR not in sys.path:
@@ -90,7 +90,7 @@ def load_dystream_model():
     # Build config with overrides (same as run.sh)
     override_args = {
         "exp_name": "gradio_demo",
-        "model.module_name": "model.motion_generation.motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder",
+        "model.module_name": "model.motion_generation.realtime_audio2face_cuda_graph",
         "resume_ckpt": os.path.join(PROJECT_ROOT, "checkpoints", "last.ckpt"),
     }
     _dystream_cfg = Config(config_path, override_args)

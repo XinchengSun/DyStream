@@ -8,7 +8,7 @@ export TRANSFORMERS_OFFLINE="${TRANSFORMERS_OFFLINE:-1}"
 export HF_HUB_OFFLINE="${HF_HUB_OFFLINE:-1}"
 
 CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0,1}" \
-python -u mic_realtime_to_mp4_lag1.py \
+python -u realtime_mic_to_mp4.py \
   --feature_lag_frames "${FEATURE_LAG_FRAMES:-3}" \
   --hop_ms "${HOP_MS:-200}" \
   --denoising_steps "${DENOISING_STEPS:-1}" \

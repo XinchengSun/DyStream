@@ -30,5 +30,5 @@ python -u main.py \
   test=True \
   is_test=True \
   validation.denoising_steps="${DENOISING_STEPS}" \
-  model.module_name=model.motion_generation.motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder \
+  model.module_name=model.motion_generation.realtime_audio2face_cuda_graph \
   resume_ckpt="${CKPT}"

@@ -21,7 +21,7 @@ train.py
 main.py
 video_to_latent.py
 datasets/single_dyadic_prev_audio.py
-model/motion_generation/motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder_text.py
+model/motion_generation/text_conditioned_audio2face.py
 configs/motion_gen/overfit_2samples_selected.yaml
 configs/motion_gen/overfit_2samples_selected_text.yaml
 scripts/extract_video_motion_latents.py
@@ -171,14 +171,14 @@ This repository also includes the non-weight files for the lagged realtime micro
 Run it with:
 
 ```bash
-bash scripts/run_mic_realtime_to_mp4_lag1.sh
+bash scripts/run_realtime_mic_to_mp4.sh
 ```
 
 The helper defaults to the requested command:
 
 ```bash
 OMP_NUM_THREADS=1 TRANSFORMERS_OFFLINE=1 HF_HUB_OFFLINE=1 \
-CUDA_VISIBLE_DEVICES=0,1 python -u mic_realtime_to_mp4_lag1.py \
+CUDA_VISIBLE_DEVICES=0,1 python -u realtime_mic_to_mp4.py \
   --feature_lag_frames 3 \
   --hop_ms 200 \
   --denoising_steps 1 \
@@ -187,4 +187,4 @@ CUDA_VISIBLE_DEVICES=0,1 python -u mic_realtime_to_mp4_lag1.py \
   --port 6008
 ```
 
-Model weights are intentionally excluded from git. See `docs/mic_realtime_mp4_runtime.md` for the required local asset paths.
+Model weights are intentionally excluded from git. See `docs/realtime_mic_to_mp4.md` for the required local asset paths.

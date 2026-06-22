@@ -10,7 +10,7 @@ import soundfile as sf
 import librosa
 
 import app
-import dual_gpu_mic_realtime_ui_v8_playbuffer as base
+import realtime_mic_pipeline as base
 
 
 def audio_to_16k_float(audio):
@@ -249,15 +249,15 @@ def main():
     with gr.Blocks(title="DyStream Mic Realtime to MP4 Benchmark") as demo:
         gr.Markdown(
             """
-# DyStream 实时麦克风输入 → 后台流水线 → MP4 Benchmark
+# DyStream realtime microphone to MP4 benchmark
 
-用途：不显示实时视频，只验证“你说话时后台是否已经在推理，结束后多久能拿到 MP4”。
+Purpose: record microphone audio, run the background pipeline, and save an MP4.
 
-建议测试：
+Suggested test:
 1. 点击 Clear
-2. 说 8 秒左右
-3. 说完立刻点 Save MP4
-4. 看保存耗时和 MP4 效果
+2. Speak for around 8 seconds
+3. Click Save MP4 immediately after speaking
+4. Check save latency and MP4 quality
 """
         )
 

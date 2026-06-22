@@ -37,7 +37,7 @@ data:
   training_mode: speaker_only
 
 model:
-  module_name: model.motion_generation.motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder_text
+  module_name: model.motion_generation.text_conditioned_audio2face
   class_name: Audio2FaceGPT
   use_text_condition: true
   text_encoder_name: openai/clip-vit-base-patch32

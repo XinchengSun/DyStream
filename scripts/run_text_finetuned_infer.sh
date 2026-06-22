@@ -22,7 +22,7 @@ python -u main.py \
   test=True \
   is_test=True \
   validation.denoising_steps="${DENOISING_STEPS}" \
-  model.module_name=model.motion_generation.motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder_text \
+  model.module_name=model.motion_generation.text_conditioned_audio2face \
   prompt_override="${PROMPT_OVERRIDE}" \
   resume_ckpt="${CKPT}" \
   2>&1 | tee "logs/${EXP_NAME}.log"

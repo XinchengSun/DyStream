@@ -268,7 +268,7 @@ selected 文本条件 overfit 配置。
 
 ```yaml
 use_text_condition: true
-module_name: model.motion_generation.motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder_text
+module_name: model.motion_generation.text_conditioned_audio2face
 ```
 
 文本训练命令：
@@ -284,7 +284,7 @@ EXP_NAME=overfit_2samples_selected_text_stride1_bs64 \
 bash scripts/run_selected_overfit.sh
 ```
 
-### `model/motion_generation/motion_gen_gpt_flowmatching_addaudio_linear_twowavencoder_text.py`
+### `model/motion_generation/text_conditioned_audio2face.py`
 
 文本条件模型文件。
 
