@@ -34,6 +34,8 @@ scripts/run_text_finetuned_infer.sh
 data_json/overfit_items_selected.json
 data_json/overfit_train_selected.json
 data_json/overfit_test_selected.json
+data_overfit_selected/sample_001/
+data_overfit_selected/sample_002/
 ```
 
 ## What Is Not Included
@@ -43,7 +45,6 @@ Large runtime assets are intentionally not included:
 ```text
 checkpoints/
 tools/
-data_overfit_selected/
 generated videos
 raw source videos
 ```
@@ -55,6 +56,26 @@ The original DyStream repository, official checkpoint, and wrapping encoder/deco
 The overfit experiment uses two manually selected talking-head clips. The selected train metadata is expanded into many sliding windows, instead of using only two metadata rows. This is important because DyStream trains on a fixed-length window; if the train JSON only has two rows, training only sees the beginning of each video.
 
 The text-condition extension adds a text-conditioned model variant. Captions are read from metadata, passed through the dataset and training/inference code, encoded with a text encoder, and injected into the generation hidden states.
+
+## Included Selected Data
+
+The two selected overfit samples are checked in under:
+
+```text
+data_overfit_selected/sample_001/
+data_overfit_selected/sample_002/
+```
+
+Each sample includes:
+
+```text
+audio.wav
+gt.mp4
+motion.npz
+preview.jpg
+ref.png
+ref_resize.png
+```
 
 ## Minimal Reproduction
 

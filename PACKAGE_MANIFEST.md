@@ -67,6 +67,21 @@ overfit_text_code_package_20260618/
     overfit_train_selected.json
     overfit_test_selected.json
     overfit_items.template.json
+  data_overfit_selected/
+    sample_001/
+      audio.wav
+      gt.mp4
+      motion.npz
+      preview.jpg
+      ref.png
+      ref_resize.png
+    sample_002/
+      audio.wav
+      gt.mp4
+      motion.npz
+      preview.jpg
+      ref.png
+      ref_resize.png
 ```
 
 ## Recommended final upload command
@@ -103,8 +118,9 @@ Large runtime dependencies must still be prepared from the original DyStream pro
 ```text
 checkpoints/last.ckpt
 tools/wrapping_encoder_decoder and related checkpoints
-prepared two-sample data under data_overfit/
 ```
+
+The selected two-sample data is now included under `data_overfit_selected/`.
 
 The motion latent extraction entry points are:
 
